@@ -6,10 +6,21 @@ function App() {
 	let [like,likeM] = useState(0);
 	let [modal, modalM] = useState(false);
 	let [clickTitle, clickTitleM] = useState(0);
+	
+	let [inputValue,inputValueM] = useState('');
+	
 	return (
 	<div className="App">
 		<div className="black-nav">
 			<div>개발 Blog</div>
+		</div>
+			<div className="publish">
+			<input onChange={(e)=>{inputValueM(e.target.value)}} />
+			<button onClick={()=>{
+				var arrayCopy = [...글제목];
+				arrayCopy.unshift(inputValue);
+				글제목변경(arrayCopy);
+			}}>저장</button>
 		</div>
 		<div className="list">
 			<h4 onClick={() => {modalM(!modal)}}>{글제목[2]}</h4>
@@ -24,7 +35,7 @@ function App() {
 		{
 		글제목.map((a, i) => {
 			return (
-				<div className="list">
+				<div className="list" key={i}>
 					<h4 onClick={()=>{clickTitleM(i)}}>{a}<span onClick={()=>{likeM(like+1);}}>👍</span>{like}</h4>
 					<p>12월 20일 발행</p>
 					<hr/>
@@ -32,7 +43,8 @@ function App() {
 			);
 		})
 	}
-    </div>
+	
+	</div>
   );
 }
 

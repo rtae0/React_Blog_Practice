@@ -23,6 +23,11 @@
 	background: #eee;
 	margin-top: 20px;
 }
+.publish button {
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
