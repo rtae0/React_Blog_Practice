@@ -23,6 +23,13 @@
 	background: #eee;
 	margin-top: 20px;
 }
+.publish input {
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	width: 80%;
+	border: 1px solid gray;
+}
 .publish button {
 	display: block;
 	margin: auto;
